@@ -11,7 +11,9 @@ from extra_apps.common.common_data import SUCCESS
 
 
 class CitesListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
+    # 查询到的内容
     queryset = Cites.objects.all()
+    # 序列化
     serializer_class = CitesSerializers
 
     def list(self, request, *args, **kwargs):
@@ -32,7 +34,6 @@ class CitesListViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
         all_list = []
         new_data = {}
         for type_item in cites_type:
-            print(type_item)
             for data_item in query_data:
                 if data_item['city_type'] == type_item:
                     new_data['city_type'] = type_item

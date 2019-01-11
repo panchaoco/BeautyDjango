@@ -30,8 +30,7 @@ SECRET_KEY = '(drl7lq(45*iksozw7=#xp*ag-(-u!vglo8i#j6u(h1!%t7sa7'
 DEBUG = True
 print(socket.gethostbyname(socket.gethostname()))
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    socket.gethostbyname(socket.gethostname())
+    '*',
 ]
 
 
@@ -95,7 +94,7 @@ DATABASES = {
         'NAME': 'beauty_makeup',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'HOST': '47.107.167.224',
         'PORT': 3306,
         'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB'}
     }
@@ -138,5 +137,5 @@ USE_TZ = False  # 默认是Ture，时间是utc时间，由于我们要用本地�
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+STATIC_ROOT='/var/www/execution/static/'
 STATIC_URL = '/static/'
